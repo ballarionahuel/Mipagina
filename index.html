@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Nyan Cat CSS</title>
+<style>
+  body {
+    background-color: #336699;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Contenedor del gato */
+  .nyan-cat {
+    position: relative;
+    width: 100px;
+    height: 70px;
+    animation: moveNyan 3s infinite linear;
+  }
+
+  /* Cuerpo del gato (Pop-Tart) */
+  .body {
+    position: absolute;
+    width: 100px;
+    height: 70px;
+    background: #ff99cc;
+    border-radius: 10px;
+    border: 3px solid #000;
+    z-index: 2;
+  }
+
+  /* Cabeza */
+  .head {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: #ffcc99;
+    border-radius: 10px;
+    border: 3px solid #000;
+    left: 70px;
+    top: 5px;
+    z-index: 3;
+  }
+
+  /* Arcoiris */
+  .rainbow {
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    left: -190px;
+    top: 10px;
+    z-index: 1;
+    background: repeating-linear-gradient(
+      to bottom,
+      #ff0000, #ff0000 10px,
+      #ff9900 10px, #ff9900 20px,
+      #ffff00 20px, #ffff00 30px,
+      #33ff00 30px, #33ff00 40px,
+      #0099ff 40px, #0099ff 50px,
+      #6633ff 50px, #6633ff 60px
+    );
+    animation: rainbowShift 0.5s infinite linear;
+  }
+
+  /* Animación del gato moviéndose */
+  @keyframes moveNyan {
+    0% { transform: translate(-100px, 0); }
+    100% { transform: translate(100vw, 0); }
+  }
+
+  /* Animación del arcoiris */
+  @keyframes rainbowShift {
+    0% { width: 0; }
+    100% { width: 200px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="nyan-cat">
+    <div class="rainbow"></div>
+    <div class="body"></div>
+    <div class="head"></div>
+  </div>
+
+</body>
+</html>
